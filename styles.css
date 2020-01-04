@@ -13,3 +13,17 @@ li:first-child a {
 :--headers {
 	color: red;
 }
+
+@custom-media --ipad-size (420px < width <= 768px);
+@media (--ipad-size) {
+	body {
+		background-color: red;
+	}
+}
+
+@custom-media --ipadPro-size(768px < width <= 1024px);
+@media (--ipadPro-size) {
+	body {
+		background-color: blue;
+	}
+}
