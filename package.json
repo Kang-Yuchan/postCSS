@@ -3,19 +3,26 @@
 	"version": "1.0.0",
 	"description": "CSS4, PostCSS, Grid, Flexbox, CSSNext",
 	"scripts": {
-		"start": "parcel index.html"
+		"start": "parcel index.html",
+		"start-eCommerce": "parcel eCommerce/index.html"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"postcss-grid-kiss": "^2.3.0",
 		"postcss-preset-env": "^6.7.0"
 	},
 	"postcss": {
 		"plugins": {
 			"postcss-preset-env": {
 				"stage": 0
-			}
+			},
+			"postcss-grid-kiss": true,
+			"postcss-color-mod-function": {}
 		}
+	},
+	"devDependencies": {
+		"postcss-color-mod-function": "^3.0.3"
 	}
 }

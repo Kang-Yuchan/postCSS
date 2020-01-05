@@ -2,13 +2,21 @@
 	--awesomeColor: #2980b9;
 	--hugeSize: 300px;
 }
+h1 {
+	font-family: system-ui;
+	color: color-mod(#f1c40f contrast(30%));
+}
 
-li:first-child a {
+h2 {
+	color: gray(50);
+}
+
+h2:first-child a {
 	color: var(--awesomeColor);
 	font-size: var(--hugeSize);
 }
 
-@custom-selector :--headers h1, h2, h3, h4, h5, h6;
+@custom-selector :--headers h5, h6;
 
 :--headers {
 	color: red;
@@ -21,9 +29,28 @@ li:first-child a {
 	}
 }
 
-@custom-media --ipadPro-size(768px < width <= 1024px);
+@custom-media --ipadPro-size (768px < width <= 1024px);
 @media (--ipadPro-size) {
 	body {
 		background-color: blue;
+	}
+}
+
+main {
+	background-color: blue;
+	& section {
+		background-color: red;
+		width: 500px;
+		& li {
+			background-color: yellow;
+			width: 400px;
+			& a {
+				color: red;
+				text-decoration: none;
+				&:hover {
+					font-size: 30px;
+				}
+			}
+		}
 	}
 }
